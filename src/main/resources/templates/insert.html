@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/homepage.css}" rel="stylesheet" />
+    <title>Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="homepage">
+    <h1>Upload Page</h1>
+    <div class="insert-container">
+        <form th:action="@{/insertfunction}" method="post">
+            <label>
+                Id:
+                <input type="text" name="id" required="required">
+            </label>
+            <br>
+            <label>
+                Name:
+                <input type="text" name="name" required="required">
+            </label>
+            <br>
+            <label>
+                Branch:
+                <input type="text" name="branch" required="required">
+            </label>
+            <br>
+            <label>
+                College:
+                <input type="text" name="college" required="required">
+            </label>
+            <br>
+            <label>
+                City:
+                <input type="text" name="city" required="required">
+            </label>
+            <br>
+            <input type="submit" value="Insert Data" class="insert-button">
+        </form>
+    </div>
+    <h3 th:if="${showmessage}">Data Uploaded Successfully</h3>
+</body>
+
+</html>
